@@ -20,14 +20,13 @@ bool isAnagram(string s, string t) {
             else
                 t1[c]++;
         }
-        for(char c:s){
-            if(m[c] != t1[c])
-                return false;
+        if(m==t1){
+            return true;
         }
-        return true;
+        return false;
     }
 int main(){
-    string s = "anagram";
+    string s = "anagtam";
     string t = "naagram";
     cout<<isAnagram(s,t)<<endl;
     return 0;
