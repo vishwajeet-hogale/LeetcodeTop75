@@ -2,25 +2,29 @@
 #include<bits/stdc++.h>
 #include<math.h>
 using namespace std;
-int dp[401][401];
+
 int knapsack(vector<int> &weights,vector<int> &profits,int capacity,int n){
-    if(dp[n][capacity] != 0){
-        return dp[n][capacity];
-    }
-    if(n== 0 || capacity == 0){
-        return 0;
+    int dp[weights.size()+1][capacity+1];
+    for(int i=0;i<=weights.size();i++){
+        for(int j =0;j<=capacity;j++){
+            if(i==0 || j == 0){
+                dp[i][j] = 0;
+            }
+            else if(weights[i-1] <= j){
+                dp[i][j] = max(profits[i-1]+dp[i-1][j-weights[i-1]],dp[i-1][j]);
+            }
+            else {
+                dp[i][j] = dp[i-1][j];
+            }
+        }
+        
     }
 
-    else if(weights[n-1] <= capacity){
-        dp[n][capacity] = max(profits[n-1]+knapsack(weights,profits,capacity-weights[n-1],n-1),knapsack(weights,profits,capacity,n-1));
-    }
-    else if(weights[n-1] > capacity){
-        dp[n][capacity] =  knapsack(weights,profits,capacity,n-1);
-    }
-    // return dp[n][capacity];
+    return dp[weights.size()][capacity];
 }
+
 int main(){
-    memset(dp,0,sizeof(dp));
+    // memset(dp,-1,sizeof(dp));
     vector<int> weights,profits;
     weights.push_back(10);
     weights.push_back(20);
