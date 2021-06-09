@@ -33,8 +33,8 @@ void LCSDP(string x,string y){
     string s = "";
     int i = n;
     int j = m;
-    while(i>=0){
-        while(j>=0){
+    while(i>=0 && j>=0){
+        
             if(x[i-1] == y[j-1]){
                 s.push_back(x[i-1]);
                 j--;
@@ -46,7 +46,7 @@ void LCSDP(string x,string y){
                 else
                     i = i - 1;
             }
-        }
+        
     }
     reverse(s.begin(),s.end());
     cout<<s<<endl;
