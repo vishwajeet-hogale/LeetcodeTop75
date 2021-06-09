@@ -1,6 +1,18 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
+
+//Approach 
+/* 
+String 1 : abcde
+String 2 : bcdfg
+Output :    Insertion = 2
+            Deletion = 2 
+
+Find the LCS and count the number of letters missing in string 1 
+Deletion = STring 1 - LCS 
+Insertion = String 2 - LCS 
+*/
 int LCS(string x,string y){
     int n = x.length();int m = y.length();
     int dp[n+1][m+1]={-1};
@@ -23,11 +35,12 @@ int LCS(string x,string y){
     }
     return dp[n][m];
 }
-int minNumDeletions(string x,string y){
+void minNumDeletions(string x,string y){
     int lcs = LCS(x,y);
-    return x.length()-lcs;
+    cout<<"Insertion : "<<y.length()-lcs<<endl;
+    cout<<"Deletion : "<<x.length()-lcs<<endl;
 }
 int main(){
-    cout<<minNumDeletions("abcdef","de")<<endl;
+   minNumDeletions("abcdef","dex");
     return 0;
 }
