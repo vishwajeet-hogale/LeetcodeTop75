@@ -2,7 +2,9 @@
 #include<math.h>
 #include<bits/stdc++.h>
 using namespace std;
-
+/*Approach 
+LPS(string x) -> LCS(string x, string reverse(x))
+*/
 int LPSDP(string x,string y){
     int n = x.length();
     int m = y.length();
