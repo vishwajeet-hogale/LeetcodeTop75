@@ -1,7 +1,7 @@
 #include<iostream>
 #include<bits/stdc++.h>
 using namespace std;
-
+/*Given a 2D grid containing 1's, 0's and 9, find the shortest distance between (0,0) and the position that has value 9. 0's are obstacles and we can move horizontally as well as vertically.*/
 vector<vector<int>> graph({
     {1,1,0,0},
     {0,1,9,0},
