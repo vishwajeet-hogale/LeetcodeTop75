@@ -22,3 +22,7 @@ void mode(TreeNode *root){
     }
     mode(root->right);
 }
+int getMode(TreeNode *root){
+    mode(root);
+    return val;
+}
