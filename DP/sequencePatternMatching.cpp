@@ -19,7 +19,7 @@ int isSubsequence(string x,string y){
                 dp[i][j] = max(dp[i-1][j],dp[i][j-1]);
         }
     }
-    if(dp[n][m] == m)
+    if(dp[n][m] == min(m,n))
         return 1;
     return 0;
 }
