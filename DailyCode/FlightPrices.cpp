@@ -16,7 +16,6 @@ int twoCityScheduling(vector<vector<int>> costs){
             
         for(int i=n/2;i<n;i++){
                    answer+=costs[savings[i].second][0];
-            
         }
         return answer;
 }
