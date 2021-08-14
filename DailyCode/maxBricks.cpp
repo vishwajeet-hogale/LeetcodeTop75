@@ -4,7 +4,7 @@
 using namespace std;
 
 int maxBricks(vector<int> &bricks,int C){
-    C--;
+    
     int dp[bricks.size()+1][C+1];
     for(int i=0;i<=bricks.size();i++){
         for(int j =0;j<=C;j++){
@@ -24,10 +24,10 @@ int maxBricks(vector<int> &bricks,int C){
     return dp[bricks.size()][C];
 }
 int getBricks(vector<int> &bricks){
-    return maxBricks(bricks,5000);
+    return maxBricks(bricks,4999);
 }
 int main(){
-    vector<int> bricks({1000, 200, 150, 200});
+    vector<int> bricks({1000, 2000, 1000, 2000});
     cout<<getBricks(bricks)<<endl;
     return 0;
 }
