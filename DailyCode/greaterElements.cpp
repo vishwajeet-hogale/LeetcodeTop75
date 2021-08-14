@@ -37,9 +37,20 @@ int main()
     arr2.push_back(3);
     arr2.push_back(4);
     vector<int> res = greaterElements(arr1, arr2);
+    for (int &x : arr1)
+    {
+        cout << x<<",";
+    }
+    cout<<endl;
+    for (int &x : arr2)
+    {
+        cout << x<<",";
+    }
+    cout<<endl;
     for (int &x : res)
     {
-        cout << x << endl;
+        cout << x << ",";
     }
+    cout<<endl;
     return 0;
 }
