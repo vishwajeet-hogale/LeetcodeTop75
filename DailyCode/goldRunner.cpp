@@ -38,3 +38,8 @@ public:
         return max_gold;
     }
 };
+int main(){
+    Solution s1;
+    cout<<s1.getMaximumGold(graph)<<endl;
+    return 0;
+}
