@@ -36,7 +36,7 @@ int longestSubsequence(string x,string y,int i,int j){
 
 }
 int main(){
-    string x = "abedfhxxxr",y = "abcdxhxxx";
+    string x = "some",y = "thing";
     cout<<longestSubsequence(x,y,x.length(),y.length())<<endl;
     return 0;
 }
