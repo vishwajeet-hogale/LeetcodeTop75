@@ -2,6 +2,7 @@
 #include<math.h>
 #include<bits/stdc++.h>
 using namespace std;
+  
 int LCS(string x,string y,int i,int j){
     if(i==0 || j==0){
         return 0;
@@ -52,6 +53,6 @@ void LCSDP(string x,string y){
     cout<<s<<endl;
 }
 int main(){
-    LCSDP("acbcf","abcbaf");
+    LCSDP("babad","dabab");
     return 0;
 }
