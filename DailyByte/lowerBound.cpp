@@ -49,3 +49,27 @@ int lowerBound3(vector<int> arr,int target){
     int r = l +1;
     return a[r] == target?r:-1;
 }
+
+/* 
+Version 4 : Loop unrolled i.e loop is eliminated 
+Advantage : No checking of the condition of the loop; saved a certain number of comparisons 
+nexti may not have locality of reference ; so the use of a constant in place of nexti makes the code a littl more faster 
+Constants access >>>>> variable access 
+*/
+int lowerBound4(vector<int> arr,int target){
+    // hardcoded for n = 1000;
+    int l = -1;
+    if(arr[l+511]<target) l = 1000 - 512;
+    if(arr[l+256] < target) l += 256;
+    if(arr[l+128] < target) l += 128;
+    if(arr[l+64] < target) l += 64;
+    if(arr[l+32] < target) l += 32;
+    if(arr[l+16] < target) l += 16;
+    if(arr[l+8] < target) l += 8;
+    if(arr[l+8] < target) l += 8;
+    if(arr[l+4] < target) l += 4;
+    if(arr[l+2] < target) l += 2;
+    if(arr[l+1] < target) l += 1;
+    int r = l + 1;
+    return arr[r] == target?r:-1;
+}
