@@ -21,7 +21,7 @@ int findNumberOfWays(string s){
             }
             else{
                 dp[i][j] = dp[i-1][j];
-                cout<<dp[i][j]<<endl;
+                // cout<<dp[i][j]<<endl;
             }
         }
     }
